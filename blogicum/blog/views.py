@@ -18,7 +18,7 @@ def post_detail(request, post_id):
         pub_date__lte=timezone.now(),
         is_published=True,
         category__is_published=True,
-        pk=id
+        pk=post_id
     ).first()
     if not post:
         raise Http404()
